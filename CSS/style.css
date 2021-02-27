@@ -1,37 +1,36 @@
-/* The common CSS for all pages*/
-html
-{
-  background-color: #29383A;  /* Set the background colour. */
-  color: #E8E5C8; /* Set the font colour. */
-  font-family: "Fira Mono", Arial, sans-serif;  /* Set the font family. */
-  line-height: 1.25; /* The line height is × 1.3. */
-  font-size: 125%; /* The font size is 20px. */
-  height: 100%; /* This is for the footer to place at the very bottom of the page.  */
-  margin: 0; /* No margin */
+html {
+  height: 100%;
 }
 
-body
-{
+body {
   display: flex; /* Set <body> as a parent item so that the footer places at the very bottom of the page.  */
   flex-direction: column; /* Make all child items in the y axis direction so that the footer places at the very bottom of the page.  */
   height: 100%; /* This is for the footer to place at the very bottom of the page.  */
-  margin: 0; /* No margin */
+  
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  /* color: silver; */
 }
 
-body > main
-{
-  flex: 1; /* Set <main> that is a child item of <body> as "flex: 1;" to spread as far as there is space in the parent item.  */
-}  
+main {
+  flex: 1;
+}
 
-body a
+a
 {
   text-decoration: none; /* Delete all underlines of links.  */
 }  
 
+li {
+  list-style: none;
+}
+
+
+/* CSS for footer */
 body > footer
 {
   padding-bottom: 14px;
-  padding-top: 35px;
 }
 
 body > footer > div
@@ -72,331 +71,42 @@ body > footer > p
 
 
 
-
-
-/* CSS for <header> in the home page */
-.home > header > h1
-{
-  text-align: center;  /* <h1> is placed at the center horizontally. */
-  font-size: 2.6rem;    /* The font size is × 2.6 than that in <html>. */
-  letter-spacing: -1px;  /* The space between characters is narrower. */
-  text-shadow: 1px 1px 2px rgb(140, 140, 140);
-}
-
-.home > header > h3
-{
-  text-align: center;  /* <h1> is placed at the center horizontally. */
-  font-size: 0.9rem;    /* The font size is × 0.9 than that in <html>. */
-  font-weight: 70;  /* The font is light (the default is 100). */
-  color: rgba(232, 229, 200, 0.6);  /* The font colour is darker. */
-  letter-spacing: -0.3px;  /* The space between characters is a little narrower. */
-}
-
-
-
-
-/* CSS for <header> in the other pages */
-.menuBar
-{
-  display: flex;   /* This is for both child items to be arranged horizontally. */
-  justify-content: space-between;   /* Each child item is placed at the right side and the left side of the window. */
-  height: 70px;
-  width: 100%;   /* ".menuBar" spread with the same width as the window. */
-}
-
-.menuBar > .menuBar-title
-{
-  align-self: center;   /* <h2> is arranged at the center vertically. */
-  margin-left: 60px;
-  text-shadow: 1px 1px 1px rgb(160, 160, 160);   /* <h2> has light shadow. */
-  color: #dfded9;
-}
-
-.menuBar > .menuBar-items
-{
-  align-self: flex-start;   /* Each menu item starts from at the top of the window. */
-  text-shadow: 1px 1px 1px rgb(160, 160, 160);  /* Each menu item has light shadow. */
-  padding-top: 20px;   /* THe space between the link and the top of the window. */
-  padding-right: 62px;  /* THe space between the link and the right side of the window. */
-}
-
-.menuBar a
-{
-  color: #E8E5C8; /* The font colour. */
-  padding: 3px 14px 3px 14px; /* The space between the link and the lins is 3px. */
-  font-size: 0.7rem; /* The font size is lighter. */
-  font-weight: normal; /* The menu item is not bold. */
-  border-top: rgba(233, 233, 233, 0) solid 1px;
-  border-bottom: rgba(233, 233, 233, 0) solid 1px;
-}
-
-nav.menuBar > div.menuBar-items > a:hover
-{
-  border-top: rgb(233, 233, 233) solid 1px; /* Once each menu item is on hover, border-top and border-bottom ill appear slowly. */
-  border-bottom: rgb(233, 233, 233) solid 1px; /* Once each menu item is on hover, border-top and border-bottom ill appear slowly. */
-  transition: all .6s ease; /* The stansition require all CSS functions and 0.6 seconds. The movement style is "ease"(move smoothly). */
-}
-
-.menuBar a:visited
-{
-  color: #aeb9ab; /* Chane the font colour after being clicked.  */
-}
-
-
-
-
-/* CSS inside <main> in the home page */
-.home nav
-{
-  display: flex; /* Set <main> as "display: flex;" to arrange ".menu" items horizontally.  */
-  justify-content: center; /* Each child item of <nav> is gathered in the center horizontally.  */
-  align-items: center;/* Each child item of <nav> is gathered in the center vertically, even when that is on hover.  */
-  height: 250px; /* Set the height to <nav> so that a child item of <nav> does not move vertically, even when on hover.  */
-  width: 100%; /* THe width of <nav> is the same as its parent item, <main>.  */
-  margin-top: 100px; /* This is space between <nav> and <header>.  */
-}
-
-.home nav > div.menu
-{
-  height: 210px; /* The height of each child item of <main> is 180px.  */
-  width: 210px; /* The width of each child item of <main> is 180px.  */
-  background-color: rgb(56, 75, 78); /* The background-colour is lighter.  */
-  position: relative; /* Set ".menu" at the relative position so that its child items place at the center of its horizontally and vertically.  */
-  z-index:0;  /* This is for the :hover item to appear forward.  */
-}  
-
-.home nav > div.menu > img
-{
-  position: absolute; /* Set <img> at the absolute position based on its parent's item, ".menu".  */
-  top: 50%; /* Place the top left corner of <image> at 50% of its parent's' width and 50% of its parent's height. */
-  left: 50%; /* Place the top left corner of <image> at 50% of its parent's' width and 50% of its parent's height. */
-  transform: translateY(-100%) translateX(-50%);  /* Move the <img> upward by 100% of its height and to the left by 50% of its width. */
-}  
-
-.home nav > div.menu > div
-{
-  position: absolute; /* Set <h2> at the absolute position based on its parent's item, ".menu".  */
-  top: 50%; /* Place the top left corner of <h2> at 50% of its parent's' width and 50% of its parent's height. */
-  left: 50%; /* Place the top left corner of <h2> at 50% of its parent's' width and 50% of its parent's height. */
-  transform: translateY(20%) translateX(-50%);    /* Move the <div> downwards by 20% of its height and to the left by 50% of its width. */
-  margin-bottom: 0;   /* No margin for the bottom. */
-  cursor: pointer; /* The shape of the cursor is the pointer.  */
-}
-
-.home nav > div.menu > div > a
-{
-  color: #E8E5C8; /* Set the font colour. */
-  text-align: center; /* Set the text at the center horizontally.  */
-  font-size: 0.7rem; /* The font size is 20px.  */
-  font-weight: 100; /* The text is not bold.  */
-}
-
-.home .menu:hover
-{
-  transition-property: border; /* Set the border is visible only when it is on hover.  */
-  transition-duration: 0.5s; /* When ".menu" is on hover, it takes 0.5 seconds to complete the transition.  */
-  transform-origin: center;  /* When ".menu" is on hover, the origin for the transformation is exactly the center of it.  */
-  border: rgba(172, 223, 164, 0.74) 0.7rem solid; /* Set the border is visible only when it is on hover.  */
-  z-index:1;  /* This is for the :hover item to appear forward.  */
-}
-
-.home nav > div.menu > div > a:visited
-{
-  color: #6b949b; /* Chane the font colour after being clicked.  */
-}
-
-
-
-
-/* CSS inside <main> in the "about" page */
-article.about
-{
-  margin: 75px 270px 0px 270px;
-  height: 500px;
-}
-
-article.about h2
-{
-  text-align: center; /* <h2> is placed at the center horizontally. */
-  color: #ddd69b;  
-  text-shadow: 1px 1px 2px rgb(140, 140, 140); /* <h2> has liht ahadow. */
-  margin-bottom: 70px;
-}
-
-article.about > figure
-{
-  float:right; /* <figure> move to the right side. */
-  margin-left: 50px;
-  font-weight: normal; /* The font weight is not bold. */
-  color: rgba(232, 229, 200, 0.6);
-}
-
-article.about > div.sameHeight
-{
-  padding-top: 42px;
-  color: rgba(232, 229, 200, 0.8);
-  font-weight: 20; /* The font weight is lighter (the default is 100). */
-}
-
-article.about > div.sameHeight > div.underlineParent
-{
-  margin-bottom:35px;
-}
-
-article.about > .sameHeight
-{
-  display: inline-block;   /* Set both <div> and <figure> as the inline-block items so that they flow. */
-  vertical-align: middle; /* Both <div> and <figure> start from the same position vertically. */ 
-}
-
-article.about .underline
-{
-  position: relative; /* This is for the line to start from the very end of ".underline" element. */
-  width: 623px;  /* Set the width of the text so that the line can stop at the end of the text. */
-}
-
-article.about .underline::after
-{
-  content: '';  /* ".underline::after" is empty element now. */
-  position: absolute; /* The line starts from the very end of ".underline" element. */
-  left: 0;  /* The line starts from the very end of ".underline" element. */
-  bottom: -2px; /* The length from the text */
-  width: 0%;  /* The line is invisible unless the parent item is on hover. */
-  height: 0.8px;  /*  The boldness of the line */
-  background: #e6d862;  /* The line colour */
-  transition: all 0.6s ease;  /* The animation duration is 0.6 seconds and the properties to use are all CSS properties.  */
-}
-
-.underlineParent:hover .underline::after
-{
-  width: 100%;  /*Once the parent item is on hover, the line become visible. */
-}
-
-
-
-
-/* CSS inside <main> in the "photos" page */
-.photosReviewsTop article.photos
-{
-  margin: 75px 270px 0px 270px;
-  display: flex; /* This is for <div> and <h2> to place vertically. */
-  flex-direction: column; /* Arrange the child items vertically. */
-  align-items: center; /* The position of the horizontal center of both child items is the same. */
-}
-
-.photosReviewsTop article.photos h2
-{
-  margin-bottom: 75px;
-  text-align: center; /* <h2> is placed at the center horizontally. */
-  color: #ddd69b;   
-  text-shadow: 1px 1px 2px rgb(140, 140, 140); /* <h2> has light shadow. */
-}
-
-.photosReviewsTop article.photos > div
-{
-  display: grid;  /* Set the grid layout to arrange four photos in a square.  */
-  grid-template-columns: 400px 400px;  /* Make two grid containers horizontally,which the width is 400px.  */
-  grid-template-rows: 400px 400px;  /* Make two grid containers vertically,which the height is 400px.  */
-  gap: 85px;  /* The space between each grid container.  */
-  padding: 20px;
-}
-
-
-
-/* CSS inside <main> in the "reviews". page */
-article.reviews
-{
-  margin: 160px 270px 0px 270px;
-}
-
-article.reviews h2
-{
-  text-align: center; /* <h2> is placed at the center horizontally. */
-  color: #ddd69b;  
-  text-shadow: 1px 1px 2px rgb(140, 140, 140); /* <h2> has light shadow.  */
-}
-
-article.reviews > div
-{
-  padding: 20px;  
-}
-
-article.reviews > div > div
-{
-  background-color: #cfceb3;
-  border-radius: 12px; /* The corners of <div> is rounded. */
-  padding: 25px; /* The space between the border and the text. */
-  margin: 15px 0 5px 0; /* The space between each <div>. */
-  color:#29383A;
-}
-
-article.reviews > div > div > p
-{
-  margin: 0;  
-}
-
-
-/* ========================================================================================================= */
-
-html {
-  height: 100%;
-}
-
-body {
-  display: flex; /* Set <body> as a parent item so that the footer places at the very bottom of the page.  */
-  flex-direction: column; /* Make all child items in the y axis direction so that the footer places at the very bottom of the page.  */
-  height: 100%; /* This is for the footer to place at the very bottom of the page.  */
-  
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: normal;
-  font-style: normal;
-  background-color: #272729;
-  color: silver;
-  margin: 50px 120px 50px 120px;
-}
-
-body a
-{
-  text-decoration: none; /* Delete all underlines of links.  */
-}  
-
-
 /* CSS for the menu bar */
 .menu_bar
 {
-  display: flex;   /* This is for both child items to be arranged horizontally. */
-  justify-content: space-between;   /* Each child item is placed at the right side and the left side of the window. */
+  display: flex; 
+  justify-content: space-between;  
   height: 70px;
-  width: 100%;   /* ".menuBar" spread with the same width as the window. */
+  width: 100%; 
 }
 
 .menu_bar > .menu_bar_title
 {
-  align-self: center;   /* <h2> is arranged at the center vertically. */
-  margin-left: 60px;
-  text-shadow: 1px 1px 1px rgb(160, 160, 160);   /* <h2> has light shadow. */
+  align-self: center; 
+
+  padding-left: 60px;
+  text-shadow: 1px 1px 1px rgb(160, 160, 160);
   color: #dfded9;
 }
 
 .menu_bar > .menu_bar_items
 {
-  align-self: flex-start;   /* Each menu item starts from at the top of the window. */
-  text-shadow: 1px 1px 1px rgb(160, 160, 160);  /* Each menu item has light shadow. */
+  align-self: flex-start; 
+  text-shadow: 1px 1px 1px rgb(160, 160, 160); 
   padding-top: 20px;   /* THe space between the link and the top of the window. */
-  padding-right: 62px;  /* THe space between the link and the right side of the window. */
 }
 
 .menu_bar a
 {
-  color: #E8E5C8; /* The font colour. */
-  padding: 3px 14px 3px 14px; /* The space between the link and the lins is 3px. */
-  font-size: 0.7rem; /* The font size is lighter. */
-  font-weight: normal; /* The menu item is not bold. */
+  color: #E8E5C8; 
+  padding: 3px 14px 3px 14px; 
+  font-size: 0.7rem; 
+  font-weight: normal; 
   border-top: rgba(233, 233, 233, 0) solid 1px;
   border-bottom: rgba(233, 233, 233, 0) solid 1px;
 }
 
-nav.menu_bar > div.menu_bar_items > a:hover
+.menu_bar_items > a:hover
 {
   border-top: rgb(233, 233, 233) solid 1px; /* Once each menu item is on hover, border-top and border-bottom ill appear slowly. */
   border-bottom: rgb(233, 233, 233) solid 1px; /* Once each menu item is on hover, border-top and border-bottom ill appear slowly. */
@@ -408,10 +118,30 @@ nav.menu_bar > div.menu_bar_items > a:hover
   color: #aeb9ab; /* Chane the font colour after being clicked.  */
 }
 
-nav.menu_bar > div.menu_bar_items > a.current_page
+.menu_bar_items > .current_page
 {
   border-top: rgb(233, 233, 233) solid 1px;
   border-bottom: rgb(233, 233, 233) solid 1px;
+}
+
+
+
+
+/* CSS for main page */
+.index > main > div {
+  height: 100%;
+}
+
+
+
+
+/* CSS for about page */
+.about > main {
+  margin: 50px 300px 0px 300px;    
+}
+
+.about > main >article > h2 {
+  padding-top: 135px;
 }
 
 
@@ -456,6 +186,20 @@ nav.menu_bar > div.menu_bar_items > a.current_page
   list-style: none;
 }
 
-#non_margin_top {
-  margin-top: 0;
+
+
+/* CSS for plans page */
+.plans .uk-card-body {
+  height: 310px;
+  padding: 0;
+}
+
+.plans .uk-card-body > img {
+  width: 100%;
+}
+
+.plans .uk-transition-fade {
+  margin: 30px 30px 20px 30px;
+  background-color: rgba(226, 226, 226, 0.658);
+  height: 250px;
 }
