@@ -1,4 +1,5 @@
 use Yuriko200448500;
+#drop table if exists reviews;
 
 -- phpMyAdmin SQL Dump
 -- version 5.0.2
