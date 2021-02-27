@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS `reviews` (
   `review` varchar(200) NOT NULL,
   `like` int DEFAULT '0',
   PRIMARY KEY (`post_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `reviews`
