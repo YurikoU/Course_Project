@@ -1,3 +1,6 @@
+use Yuriko200448500;
+#drop table if exists booking_info;
+
 -- phpMyAdmin SQL Dump
 -- version 5.0.2
 -- https://www.phpmyadmin.net/
@@ -7,9 +10,6 @@
 -- Server version: 8.0.21
 -- PHP Version: 7.3.21
 
-use Yuriko200448500;
-
-#drop table if exists booking_info;
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
