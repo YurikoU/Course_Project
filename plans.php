@@ -133,7 +133,7 @@
       </article>
 
       <article>
-        <form id="booking_form" action="booking_process.php" method="post" name="form" onsubmit="confirmation()">
+        <form id="booking_form" action="booking_process.php" method="post" name="form" onsubmit="return confirmation()">
 
             <label>First Name<input type="text" name="first_name" placeholder="E.g. John" required></label>
             <label>Last Name<input type="text" name="last_name" placeholder="E.g. Smith" required></label>
@@ -166,13 +166,12 @@
         //   alert(document.form.check_in.value );
         //   alert(document.form.check_out.value );
 
-        function confirmation() {          
+        function confirmation() { 
           if (confirm("Do you want to book the room?"))
           {
             location.href = "booking_process.php";
             return true;
           } else {
-            window.alert("The submission has been cancelled.");
             return false;
           }
         }
