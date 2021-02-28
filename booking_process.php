@@ -109,7 +109,7 @@
                   <tr><td>e-Mail Address: $email</td></tr></tbody></table>";
             echo "<a href='index.php'>Back to TOP page</a><p></p>";   
             echo "<a href='plans.php'>Book another plan</a><p></p>";  
-            echo "<a href='delete_plan.php?id=$booking_id'>Delete this reservation</a>";  
+            echo "<a href='delete_plan.php?id=$booking_id' onclick='return confirmation()'>Delete this reservation</a>";  
           }
           catch (PDOException $e)
           {
@@ -256,7 +256,7 @@
               echo "<a href='index.php'>Back to TOP page</a><p></p>";   
               echo "<a href='updating_info.php?id=" . $booking_info['booking_id'] . "'>Update your contact information</a><p></p>";   
               echo "<a href='plans.php'>Book another plan</a><p></p>";   
-              echo "<a href='delete_plan.php?id=" . $booking_info['booking_id'] . "'>Delete this reservation</a>";  
+              echo "<a href='delete_plan.php?id=" . $booking_info['booking_id'] . "' onclick='return confirmation()'>Delete this reservation</a>";  
             }
           }  
           catch (PDOException $e) 
@@ -273,5 +273,17 @@
 
 
   </main>
+
+  <script type="text/javascript">
+        function confirmation() { 
+          if (confirm("Do you want to delete this reservation?"))
+          {
+            location.href = "delete_plan.php";
+            return true;
+          } else {
+            return false;
+          }
+        }
+    </script>
 
 <?PHP include('Head_and_footer/footer.php'); ?>
