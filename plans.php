@@ -133,7 +133,7 @@
       </article>
 
       <article>
-        <form id="booking_form" action="booking_process.php" method="post">
+        <form id="booking_form" action="booking_process.php" method="post" >
 
             <label>First Name<input type="text" name="first_name" placeholder="E.g. John" required></label>
             <label>Last Name<input type="text" name="last_name" placeholder="E.g. Smith" required></label>
@@ -151,9 +151,18 @@
               </select>
             <label>Check-in<input type="datetime-local" name="check_in" required></label>
             <label>Check-out<input type="datetime-local" name="check_out"></label>
-            <button  class="uk-button" name="submit">Book this room</button>
+            <button  class="uk-button" name="submit" onclick="confirmation();">Book this room</button>
         </form>
       </article>
+
+      <script type="text/javascript">
+        function confirmation() {
+          if (confirm('Do you want to book the room?'))
+          {
+            location.href = "booking_process.php";
+          }
+        }
+      </script>
 
     </main>
 
