@@ -32,52 +32,37 @@
       $email = filter_input(INPUT_POST, 'email');
       $room_type = filter_input(INPUT_POST, 'room_type');
       $booking_id = filter_input(INPUT_POST, 'booking_id');
-      // global $first_name;
-      // global $last_name;
-      // global $email;
 
       //Convert the date and time value into a Unix timestamp 
       $check_in_string = filter_input(INPUT_POST, 'check_in');
       $check_in_unixstamp = strtotime($check_in_string);
-      // global $check_in_unixstamp;
 
       $check_in_date_string = date("Y-m-d", $check_in_unixstamp);
       $check_in_time_string = date("H:i", $check_in_unixstamp);
       $check_in_date_unixstamp = strtotime($check_in_date_string);
-      // global $check_in_time_string;
-      // global $check_in_date_unixstamp;
 
       $check_out_string = filter_input(INPUT_POST, 'check_out');
       $check_out_unixstamp = strtotime($check_out_string);
-      // global $check_out_unixstamp;
 
       $check_out_date_string = date("Y-m-d", $check_out_unixstamp);
       $check_out_time_string = date("H:i", $check_out_unixstamp);
       $check_out_date_unixstamp = strtotime($check_out_date_string);
-      // global $check_out_time_string;
-      // global $check_out_date_unixstamp;
 
       //Variables to store today's date
       $today = new DateTime();
       $today_string = $today -> format('Y-m-d');
       $today_unixstamp = strtotime($today_string);
-      // global $today_unixstamp;
       
       //Variables to store available check-in and check-out time.
       $check_in_start = "14:00";
       $check_in_end = "21:30";
-      // global $check_in_start;
-      // global $check_in_end;
 
       $check_out_start = "08:00";
       $check_out_end = "11:00";
-      // global $check_out_start;
-      // global $check_out_end;
 
 
       //Variable to store if any validations alerted a user
       $validation = true;
-
 
       //If a user updating their contact information
       if(is_null($booking_id) === false)
