@@ -155,15 +155,15 @@
         </form>
       </article>
 
-      <script type="text/javascript">
+
+    </main>
+    <script type="text/javascript">
         function confirmation() {
           if (confirm('Do you want to book the room?'))
           {
             location.href = "booking_process.php";
           }
         }
-      </script>
-
-    </main>
+    </script>
 
 <?PHP include('Head_and_footer/footer.php'); ?>
