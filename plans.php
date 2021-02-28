@@ -133,7 +133,7 @@
       </article>
 
       <article>
-        <form id="booking_form" action="booking_process.php" method="post" >
+        <form id="booking_form" action="booking_process.php" method="post" name="form" onsubmit="confirmation()">
 
             <label>First Name<input type="text" name="first_name" placeholder="E.g. John" required></label>
             <label>Last Name<input type="text" name="last_name" placeholder="E.g. Smith" required></label>
@@ -151,17 +151,41 @@
               </select>
             <label>Check-in<input type="datetime-local" name="check_in" required></label>
             <label>Check-out<input type="datetime-local" name="check_out"></label>
-            <button  class="uk-button" name="submit" onclick="confirmation();">Book this room</button>
+            <button  class="uk-button" name="submit">Book this room</button>
         </form>
       </article>
 
 
     </main>
     <script type="text/javascript">
+        // const confirmation = document.getElementById("booking_form");
+        // confirmation.addEventListener("click", confirmation(conf)){
+        //   if (confirm('Do you want to book the room?'))
+        //   {
+        //     location.href = "booking_process.php";
+        //   } else {
+
+        //     conf.preventDefault();
+
+        //   }
+        // }
+
+
+
         function confirmation() {
+          alert(document.form.first_name.value );
+          alert(document.form.last_name.value );
+          alert(document.form.phone.value );
+          alert(document.form.email.value );
+          alert(document.form.room_type.value );
+          alert(document.form.check_in.value );
+          alert(document.form.check_out.value );
+          
           if (confirm('Do you want to book the room?'))
           {
             location.href = "booking_process.php";
+          } else {
+            return false;
           }
         }
     </script>
