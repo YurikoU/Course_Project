@@ -158,21 +158,6 @@
 
     </main>
     <script type="text/javascript">
-        // const confirmation = document.getElementById("booking_form");
-        // confirmation.addEventListener("click", confirmation(conf)){
-        //   if (confirm('Do you want to book the room?'))
-        //   {
-        //     location.href = "booking_process.php";
-        //   } else {
-
-        //     conf.preventDefault();
-
-        //   }
-        // }
-
-
-
-        function confirmation() {
         //   alert(document.form.first_name.value );
         //   alert(document.form.last_name.value );
         //   alert(document.form.phone.value );
@@ -180,12 +165,15 @@
         //   alert(document.form.room_type.value );
         //   alert(document.form.check_in.value );
         //   alert(document.form.check_out.value );
-          
+
+        function confirmation() {          
           if (confirm("Do you want to book the room?"))
           {
             location.href = "booking_process.php";
+            return true;
           } else {
-            return;
+            window.alert("The submission has been cancelled.");
+            return false;
           }
         }
     </script>
