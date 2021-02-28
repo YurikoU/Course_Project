@@ -173,19 +173,19 @@
 
 
         function confirmation() {
-          alert(document.form.first_name.value );
-          alert(document.form.last_name.value );
-          alert(document.form.phone.value );
-          alert(document.form.email.value );
-          alert(document.form.room_type.value );
-          alert(document.form.check_in.value );
-          alert(document.form.check_out.value );
+        //   alert(document.form.first_name.value );
+        //   alert(document.form.last_name.value );
+        //   alert(document.form.phone.value );
+        //   alert(document.form.email.value );
+        //   alert(document.form.room_type.value );
+        //   alert(document.form.check_in.value );
+        //   alert(document.form.check_out.value );
           
-          if (confirm('Do you want to book the room?'))
+          if (confirm("Do you want to book the room?"))
           {
             location.href = "booking_process.php";
           } else {
-            return false;
+            return;
           }
         }
     </script>
