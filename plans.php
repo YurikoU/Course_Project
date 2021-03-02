@@ -28,6 +28,7 @@
       <div class="uk-child-width-1-2 uk-text-center" uk-grid>
         <div>
           <div class="uk-card uk-card-default uk-card-body uk-transition-toggle" tabindex="0" style="background: url(Images/photo7.jpg);background-position:0% 50%; background-size:cover;" >
+          <!-- the source of the photo https://www.pexels.com/search/hotel/ -->
             <div class="uk-transition-fade">
               <h3>Room A, 1 Queen Bed</h3>
               <ul>
@@ -44,6 +45,7 @@
         </div>
         <div>
           <div class="uk-card uk-card-default uk-card-body  uk-transition-toggle" tabindex="0" style="background: url(Images/photo13.jpg);background-position:0% 50%; background-size:cover;" >
+          <!-- the source of the photo https://www.pexels.com/search/hotel/ -->
             <div class="uk-transition-fade">
               <h3>Room B, 1 Queeen Bed</h3>
               <ul>
@@ -60,6 +62,7 @@
         </div>
         <div>
           <div class="uk-card uk-card-default uk-card-body uk-transition-toggle" tabindex="0" style="background: url(Images/photo14.jpg);background-position:0% 50%; background-size:cover;" >
+          <!-- the source of the photo https://www.pexels.com/search/hotel/ -->
             <div class="uk-transition-fade">
               <h3>Room C, 1 King Bed</h3>
               <ul>
@@ -76,6 +79,7 @@
         </div>
         <div>
           <div class="uk-card uk-card-default uk-card-body uk-transition-toggle" tabindex="0" style="background: url(Images/photo12.jpg);background-position:0% 50%; background-size:cover;" >
+          <!-- the source of the photo https://www.pexels.com/search/hotel/ -->
             <div class="uk-transition-fade">
               <h3>Room D, 1 King Bed</h3>
               <ul>
@@ -92,6 +96,7 @@
         </div>
         <div>
           <div class="uk-card uk-card-default uk-card-body uk-transition-toggle" tabindex="0" style="background: url(Images/photo10.jpg);background-position:0% 50%; background-size:cover;" >
+          <!-- the source of the photo https://www.pexels.com/search/hotel/ -->
             <div class="uk-transition-fade">
               <h3>Room E, 1 Super King Bed</h3>
               <ul>
@@ -108,6 +113,7 @@
         </div>
         <div>
           <div class="uk-card uk-card-default uk-card-body uk-transition-toggle" tabindex="0" style="background: url(Images/photo11.jpg);background-position:0% 50%; background-size:cover;" >
+          <!-- the source of the photo https://www.pexels.com/search/hotel/ -->
             <div class="uk-transition-fade">
               <h3>Room F, 1 Super King Bed</h3>
               <ul>
@@ -127,7 +133,7 @@
       </article>
 
       <article>
-        <form id="booking_form" action="booking_process.php" method="post">
+        <form id="booking_form" action="booking_process.php" method="post" name="form" onsubmit="return confirmation()">
 
             <label>First Name<input type="text" name="first_name" placeholder="E.g. John" required></label>
             <label>Last Name<input type="text" name="last_name" placeholder="E.g. Smith" required></label>
@@ -149,6 +155,26 @@
         </form>
       </article>
 
+
     </main>
+    <script type="text/javascript">
+        //   alert(document.form.first_name.value );
+        //   alert(document.form.last_name.value );
+        //   alert(document.form.phone.value );
+        //   alert(document.form.email.value );
+        //   alert(document.form.room_type.value );
+        //   alert(document.form.check_in.value );
+        //   alert(document.form.check_out.value );
+
+        function confirmation() { 
+          if (confirm("Do you want to book the room?"))
+          {
+            location.href = "booking_process.php";
+            return true;
+          } else {
+            return false;
+          }
+        }
+    </script>
 
 <?PHP include('Head_and_footer/footer.php'); ?>
