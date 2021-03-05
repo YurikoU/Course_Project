@@ -119,7 +119,7 @@
           }
         }
 
-      }
+      } 
       else  
       {  //If this process is for a new reservation
 
