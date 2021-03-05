@@ -27,7 +27,7 @@
         <form action="reviews.php" method="get"> 
           <div class="row">
             <div class="col">
-              <label>Your name <i>(optional)</i><input type="text" name="name" ></label>
+              <label>Your name <i>(optional)</i><input type="text" name="name" placeholder="Please enter your name"></label>
             </div>
             <div class="col">
               <label>Search reviews by the term<input type="text" name="search_terms" placeholder="Please enter any word"></label>
@@ -104,13 +104,15 @@
             //check for results and display, if not, let the user know that no results found 
             if($statement->rowCount() >= 1) 
             {
+              
+              $num_of_results = $statement->rowCount();
               //Display the word a user entered
-              echo "<p>Searched term: \"$search_terms\"</p>"; 
-
+              echo "<p>Search term: \"$search_terms\" &nbsp;&nbsp;&nbsp;&nbsp;$num_of_results Results</p>"; 
+              
               //creating the top of the table 
               echo "<table class='table table-striped'><tbody>"; 
               echo "<tr><td>Post ID</td><td>Posted Date</td><td>Username</td><td>Reviews</td><td>Like</td></tr>"; 
-
+              
               $reviews = $statement->fetchAll();
               foreach($reviews as $review) 
               {
@@ -129,15 +131,20 @@
 
             } else
             {
-              //Display the word a user entered
-              echo "<p>Searched term: \"$search_terms\"</p>"; 
               //If any result wasn't found, the message will be displayed.
+
+              $num_of_results = $statement->rowCount();
+              //Display the word a user entered
+              echo "<p>Search term: \"$search_terms\" &nbsp;&nbsp;&nbsp;&nbsp;$num_of_results Results</p>"; 
               echo "<p>No results found! Please try to search by another word.</p>"; 
             }
 
           } else 
           {
             //If the search term is not valid
+
+            //Display the word a user entered
+            echo "<p>Search term: \"$search_terms\"</p>"; 
             echo "<p>Please enter a proper word.</p>"; 
           }   
 
