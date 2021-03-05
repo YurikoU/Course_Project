@@ -68,7 +68,7 @@
             {
               //If a user enter multiple words splited by a space
 
-              $sql = "select * from reviews where 0 < post_id";
+              $sql = "SELECT * FROM reviews WHERE 0 < post_id";
               $terms = preg_split("/[ ]+/", $_GET['search_terms']);
               foreach($terms as $term)
               {
@@ -86,7 +86,7 @@
               //If a user enter a single word
 
               //Set up SQL statement 
-              $search_reviews_query = "select * from reviews where review like :search_terms";
+              $search_reviews_query = "SELECT * FROM reviews WHERE review LIKE :search_terms";
               //Call the prepare method of the PDO object
               $statement = $dbo->prepare($search_reviews_query);
               //Bind parameter
@@ -95,6 +95,7 @@
 
             //Execute the query
             $statement->execute();
+
 
             //check for results and display, if not, let the user know that no results found 
             if($statement->rowCount() >= 1) 
@@ -114,6 +115,10 @@
                      </tr>";
               }
               echo "</tbody></table>"; 
+              
+              //close the DB connection 
+              $statement->closeCursor(); 
+
 
             } else
             {
@@ -133,7 +138,7 @@
           //If the search field is empty or a user pushed a reset button, simply display all customer reviews
 
           //set up SQL statement 
-          $view_reviews_query = "select * from reviews"; 
+          $view_reviews_query = "SELECT * FROM reviews"; 
           //prepare 
           $statement = $dbo->prepare($view_reviews_query); 
           //execute 
@@ -155,11 +160,9 @@
           }
           echo "</tbody></table>"; 
 
+          //Close the DB connection 
+          $statement->closeCursor(); 
         }
-
-
-        //close the DB connection 
-        $statement->closeCursor(); 
 
       ?>
 
