@@ -30,9 +30,9 @@
               <label>Your name <i>(optional)</i><input type="text" name="name" ></label>
             </div>
             <div class="col">
-              <label>Search reviews by the term<input type="text" name="search_term" placeholder="Please enter any word"></label>
+              <label>Search reviews by the term<input type="text" name="search_terms" placeholder="Please enter any word"></label>
             </div>
-            <button  class="uk-button" name="submit">Search</button>
+            <button  class="uk-button" name="search">Search</button>
             <button  class="uk-button" name="reset">Reset</button>
           </div>
         </form>
@@ -42,10 +42,12 @@
         session_start(); 
 
         $name = null;
-        $search_term = null;
+        $search_terms = null;
+        $search = null;
         $reset = null;
         $name = filter_input(INPUT_GET, 'name');
-        $search_term = filter_input(INPUT_GET, 'search_term');
+        $search_terms = filter_input(INPUT_GET, 'search_terms');
+        $search = filter_input(INPUT_GET, 'search');
         $reset = filter_input(INPUT_GET, 'reset');
         $_SESSION['name'] = $name;
 
@@ -53,48 +55,81 @@
         require('connect.php'); 
 
 
-        if(!empty($search_term))
+        if(isset($search))
         {
-          //If a user is searching some words
+          //If a user is searching something
 
-          //Set up SQL statement 
-          $search_reviews_query = "select * from reviews where username like :search_term OR review OR :search_term";
-          //Call the prepare method of the PDO object
-          $statement = $dbo->prepare($search_reviews_query);
-          //Bind parameter
-          $statement->bindValue(':search_term', '%'.$search_term.'%');
-          //Execute the query
-          $statement->execute();
-
-          //check for results and display, if not, let the user know that no results found 
-          if($statement->rowCount() >= 1) 
+          if(!empty($search_terms))
           {
-            //creating the top of the table 
-            echo "<table class='table table-striped'><tbody>"; 
-            echo "<tr><td>Post ID</td><td>Posted Date</td><td>Username</td><td>Reviews</td><td>Like</td></tr>"; 
+            //If the search term is valid
 
-            $reviews = $statement->fetchAll();
-            foreach($reviews as $review) 
+            $multiple_terms = substr_count($search_terms, ' ');
+            if (0 < $multiple_terms)
             {
-              echo "<tr><td>" . $review['post_id'] . "</td>
-                   <td>" . $review['post_date'] . "</td>
-                   <td>" . $review['username'] . "</td>
-                   <td>" . $review['review'] . "</td>
-                   <td>" . $review['like'] . "</td>
-                   </tr>";
+              //If a user enter multiple words splited by a space
+
+              $sql = "select * from reviews where 0 < post_id";
+              $terms = preg_split("/[ ]+/", $_GET['search_terms']);
+              foreach($terms as $term)
+              {
+                //Plus another term a user want to search to the above original query
+                $sql .= " AND review LIKE :term";
+                //Call the prepare method of the PDO object
+                $statement = $dbo->prepare($sql);
+                //Bind parameter
+                $statement->bindValue(':term', '%'.$term.'%');
+              }
+              $sql .= ";";
+
+            } else 
+            {
+              //If a user enter a single word
+
+              //Set up SQL statement 
+              $search_reviews_query = "select * from reviews where review like :search_terms";
+              //Call the prepare method of the PDO object
+              $statement = $dbo->prepare($search_reviews_query);
+              //Bind parameter
+              $statement->bindValue(':search_terms', '%'.$search_terms.'%');
             }
-            echo "</tbody></table>"; 
 
-          } else
+            //Execute the query
+            $statement->execute();
+
+            //check for results and display, if not, let the user know that no results found 
+            if($statement->rowCount() >= 1) 
+            {
+              //creating the top of the table 
+              echo "<table class='table table-striped'><tbody>"; 
+              echo "<tr><td>Post ID</td><td>Posted Date</td><td>Username</td><td>Reviews</td><td>Like</td></tr>"; 
+
+              $reviews = $statement->fetchAll();
+              foreach($reviews as $review) 
+              {
+                echo "<tr><td>" . $review['post_id'] . "</td>
+                     <td>" . $review['post_date'] . "</td>
+                     <td>" . $review['username'] . "</td>
+                     <td>" . $review['review'] . "</td>
+                     <td>" . $review['like'] . "</td>
+                     </tr>";
+              }
+              echo "</tbody></table>"; 
+
+            } else
+            {
+              //If any result wasn't found, the message will be displayed.
+              echo "<p>No results found! Please try to search by another word.</p>"; 
+            }
+
+          } else 
           {
-            //If any result wasn't found, the message will be displayed.
-            echo "<p>Sorry, no results found!</p>"; 
-          }
+            //If the search term is not valid
+            echo "<p>Please enter a proper word.</p>"; 
+          }   
 
 
-        } else if ((empty($search_term)) || (!empty($reset)))
+        } else if ((empty($search_terms)) || (!empty($reset)))
         {
-
           //If the search field is empty or a user pushed a reset button, simply display all customer reviews
 
           //set up SQL statement 
@@ -119,6 +154,7 @@
                  </tr>";
           }
           echo "</tbody></table>"; 
+
         }
 
 
