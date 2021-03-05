@@ -41,14 +41,18 @@
       <?PHP
         session_start(); 
 
+        //Initialize variables
         $name = null;
         $search_terms = null;
         $search = null;
         $reset = null;
+
+        //Store the user input 
         $name = filter_input(INPUT_GET, 'name');
         $search_terms = filter_input(INPUT_GET, 'search_terms');
         $search = filter_input(INPUT_GET, 'search');
         $reset = filter_input(INPUT_GET, 'reset');
+        //Session will be started by $name once a user enter their name
         $_SESSION['name'] = $name;
 
         //connect to the database 
@@ -100,6 +104,9 @@
             //check for results and display, if not, let the user know that no results found 
             if($statement->rowCount() >= 1) 
             {
+              //Display the word a user entered
+              echo "<p>Searched term: \"$search_terms\"</p>"; 
+
               //creating the top of the table 
               echo "<table class='table table-striped'><tbody>"; 
               echo "<tr><td>Post ID</td><td>Posted Date</td><td>Username</td><td>Reviews</td><td>Like</td></tr>"; 
@@ -122,6 +129,8 @@
 
             } else
             {
+              //Display the word a user entered
+              echo "<p>Searched term: \"$search_terms\"</p>"; 
               //If any result wasn't found, the message will be displayed.
               echo "<p>No results found! Please try to search by another word.</p>"; 
             }
@@ -133,9 +142,9 @@
           }   
 
 
-        } else if ((empty($search_terms)) || (!empty($reset)))
+        } else if ((!isset($search)) || (!empty($reset)))
         {
-          //If the search field is empty or a user pushed a reset button, simply display all customer reviews
+          //If a user is not searching or clicks a reset button, simply display all customer reviews
 
           //set up SQL statement 
           $view_reviews_query = "SELECT * FROM reviews"; 
