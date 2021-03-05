@@ -2,7 +2,7 @@
   try
   {
 
-    /*
+/*
     //Connect to the localhost
     $dsn = 'mysql:host=localhost;
             port=3308;
@@ -12,14 +12,17 @@
     $password = '';
 */
 
-
-//Connect to the Lamp Server
+    //Connect to the Lamp Server
     $dsn = 'mysql:host=172.31.22.43;
             dbname=Yuriko200448500'; 
     $username = 'Yuriko200448500'; 
     $password = 'foJpzK_3NG';
 
+
+
     $dbo = new PDO($dsn, $username, $password);    
+ 
+
   } 
   catch (PDOException $e) 
   {
