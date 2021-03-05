@@ -32,7 +32,7 @@
 
       //Connect to the database 
       require('connect.php'); 
-      $updating_info_query = "select * from booking_info where booking_id = :booking_id";
+      $updating_info_query = "SELECT * FROM booking_info WHERE booking_id = :booking_id";
       //Call the prepare method of the PDO object
       $statement = $dbo->prepare($updating_info_query); 
       //Bind the parameter

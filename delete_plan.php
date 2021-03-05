@@ -34,7 +34,7 @@
 
     //Connect to the database
     require('connect.php'); 
-    $delete_plan_query = "delete from booking_info where booking_id = :booking_id;"; 
+    $delete_plan_query = "DELETE FROM booking_info WHERE booking_id = :booking_id;"; 
     //Call the prepare method of the PDO object
     $statement = $dbo->prepare($delete_plan_query); 
     //Bind parameters
