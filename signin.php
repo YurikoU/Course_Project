@@ -17,7 +17,6 @@
             <a href="reviews.php" class="uk-h5">CUSTOMER REVIWS</a>
             <a href="access.php" class="uk-h5">ACCESS</a>
             <a href="#" class="current_page uk-h5">LOGIN YOUR PAGE</a>
-            <!-- <a href="#" class="uk-h5">SIGN UP</a> -->
           </div>
         </nav>
     </header>

@@ -15,8 +15,7 @@
           <a href="plans.php" class="uk-h5">PLANS</a>
           <a href="reviews.php" class="uk-h5">CUSTOMER REVIWS</a>
           <a href="access.php" class="current_page uk-h5">ACCESS</a>
-          <a href="signin.php" class="uk-h5">LOGIN YOUR PAGE</a>
-          <!-- <a href="membership_top.php" class="uk-h5">SIGN UP</a> -->
+          <a href="login.php" class="uk-h5">LOGIN YOUR PAGE</a>
         </div>
       </nav>
     </header>

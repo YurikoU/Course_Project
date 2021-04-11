@@ -30,7 +30,6 @@
             <a href="reviews.php" class="uk-h5">CUSTOMER REVIWS</a>
             <a href="access.php" class="uk-h5">ACCESS</a>
             <a href="#" class="current_page uk-h5">LOGIN YOUR PAGE</a>
-            <a href="#" class="uk-h5">SIGN UP</a>
           </div>
         </nav>
     </header>
@@ -46,6 +45,7 @@
           <input class="form-control"  type="password" id="password" placeholder="Password" style="height:58px;">
         </div>
         <button class="btn btn-primary" type="submit" style="width:100%;">Log in</button>
+        <a class="btn" href="signin.php">Create a new account?</a>
       </form>
     </main>
 
