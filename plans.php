@@ -16,8 +16,8 @@
           <a href="plans.php" class="current_page uk-h5">PLANS</a>
           <a href="reviews.php" class="uk-h5">CUSTOMER REVIWS</a>
           <a href="access.php" class="uk-h5">ACCESS</a>
-          <a href="membership_top.php" class="uk-h5">LOGIN YOUR PAGE</a>
-          <a href="membership_top.php" class="uk-h5">SIGN UP</a>
+          <a href="signin.php" class="uk-h5">LOGIN YOUR PAGE</a>
+          <!-- <a href="membership_top.php" class="uk-h5">SIGN UP</a> -->
         </div>
       </nav>
     </header>
@@ -133,26 +133,47 @@
       </article>
 
       <article>
-        <form id="booking_form" action="booking_process.php" method="post" name="form" onsubmit="return confirmation()">
-
-            <label>First Name<input type="text" name="first_name" placeholder="E.g. John" required></label>
-            <label>Last Name<input type="text" name="last_name" placeholder="E.g. Smith" required></label>
-            <label>Phone Number<input type="tel" name="phone" placeholder="E.g. 604-1234-5678" required></label>
-            <label>e-Mail Address<input type="email" name="email" placeholder="E.g. example@gloryhotel.ca"></label>
-            <label for="room_type">Room Type</label>
-              <select id="room_type" name="room_type" required>
-                <option value="" selected> ---Please select from the menu--- </option>
-                <option value="Room A, 1 Queen Bed">Room A, 1 Queen Bed</option>
-                <option value="Room B, 1 Queen Bed">Room B, 1 Queen Bed</option>
-                <option value="Room C, 1 King Bed">Room C, 1 King Bed</option>
-                <option value="Room D, 1 King Bed">Room D, 1 King Bed</option>
-                <option value="Room E, 1 Super King Bed">Room E, 1 Super King Bed</option>
-                <option value="Room F, 1 Super King Bed">Room F, 1 Super King Bed</option>
-              </select>
-            <label>Check-in<input type="datetime-local" name="check_in" required></label>
-            <label>Check-out<input type="datetime-local" name="check_out"></label>
-            <button  class="uk-button" name="submit">Book this room</button>
-        </form>
+        <div class="container">
+          <div class="col">
+            <form id="booking_form" action="booking_process.php" method="post" name="form" onsubmit="return confirmation()">
+              <div class="row">
+                <div class="col-sm-4 form-group">
+                  <label class="form-label">First Name<input class="form-control" type="text" name="first_name" placeholder="E.g. John" required></label>
+                </div>
+                <div class="col-sm-4 form-group">
+                  <label class="form-label">Last Name<input class="form-control" type="text" name="last_name" placeholder="E.g. Smith" required></label>
+                </div>
+                <div class="col-sm-4 form-group">
+                  <label class="form-label">Phone Number<input class="form-control" type="tel" name="phone" placeholder="E.g. 604-1234-5678" required></label>
+                </div>          
+              </div>
+              <div class="row">
+                <div class="col-sm-3 form-group">
+                  <label class="form-label">e-Mail Address<input class="form-control" type="email" name="email" placeholder="E.g. example@gloryhotel.ca"></label>
+                </div>
+                <div class="col-sm-3 form-group">
+                  <label class="form-label" for="room_type">Room Type</label>
+                    <select class="form-control" id="room_type" name="room_type" required>
+                      <option value="" selected> ---Please select from the menu--- </option>
+                      <option value="Room A, 1 Queen Bed">Room A, 1 Queen Bed</option>
+                      <option value="Room B, 1 Queen Bed">Room B, 1 Queen Bed</option>
+                      <option value="Room C, 1 King Bed">Room C, 1 King Bed</option>
+                      <option value="Room D, 1 King Bed">Room D, 1 King Bed</option>
+                      <option value="Room E, 1 Super King Bed">Room E, 1 Super King Bed</option>
+                      <option value="Room F, 1 Super King Bed">Room F, 1 Super King Bed</option>
+                    </select>
+                </div>
+                <div class="col-sm-3 form-group">
+                  <label class="form-label">Check-in<input class="form-control" type="datetime-local" name="check_in" required></label>
+                </div>
+                <div class="col-sm-3 form-group">
+                  <label class="form-label">Check-out<input class="form-control" type="datetime-local" name="check_out"></label>
+                </div>
+              </div>
+              <button class="btn btn-primary" name="submit">Book this room</button>
+            </form>
+          </div>
+        </div>
       </article>
 
 

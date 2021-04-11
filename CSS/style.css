@@ -203,3 +203,9 @@ body > footer > p
   background-color: rgba(226, 226, 226, 0.658);
   height: 250px;
 }
+
+
+body.login > main > form {
+  /* display: inline-block; */
+  width: 300px;
+}

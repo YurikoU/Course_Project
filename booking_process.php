@@ -16,8 +16,8 @@
           <a href="plans.php" class="current_page uk-h5">PLANS</a>
           <a href="reviews.php" class="uk-h5">CUSTOMER REVIWS</a>
           <a href="access.php" class="uk-h5">ACCESS</a>
-          <a href="membership_top.php" class="uk-h5">LOGIN YOUR PAGE</a>
-          <a href="membership_top.php" class="uk-h5">SIGN UP</a>
+          <a href="signin.php" class="uk-h5">LOGIN YOUR PAGE</a>
+          <!-- <a href="membership_top.php" class="uk-h5">SIGN UP</a> -->
         </div>
       </nav>
     </header>
@@ -86,7 +86,7 @@
             //Connect to the database
             require('connect.php');
 
-            $updating_sql = "UPDATE booking_info SET phone = :phone, email = :email WHERE booking_id = :booking_id";
+            $updating_sql = "update booking_info set phone = :phone, email = :email where booking_id = :booking_id";
             //Call the prepare method of the PDO object
             $statement = $dbo->prepare($updating_sql);
             //Bind parameters
@@ -167,8 +167,8 @@
 
             //Check the room availability
             $availability_query = 
-            "SELECT * FROM booking_info 
-            WHERE ( 
+            "select * from booking_info 
+            where ( 
                    ((:check_in_date < check_out_date  AND  check_in_date <= :check_in_date)
                     OR (check_in_date < :check_out_date  AND  :check_out_date <= check_out_date)
                     OR (:check_in_date <= check_in_date  AND   check_out_date <= :check_out_date))
@@ -194,7 +194,7 @@
 
               //Insert a new booking data
               $booking_query = 
-              "INSERT INTO booking_info (first_name, last_name, phone, email, room_type, check_in_date, check_in_time, check_out_date, check_out_time) VALUES (:first_name, :last_name, :phone, :email, :room_type, :check_in_date, :check_in_time, :check_out_date, :check_out_time);";
+              "insert into booking_info (first_name, last_name, phone, email, room_type, check_in_date, check_in_time, check_out_date, check_out_time) values (:first_name, :last_name, :phone, :email, :room_type, :check_in_date, :check_in_time, :check_out_date, :check_out_time);";
               //Call the prepare method of the PDO object
               $statement = $dbo->prepare($booking_query);
               //Bind parameters
@@ -213,8 +213,8 @@
 
               //Get all booking info of this new reservation to print it on the browser   
               $get_booking_info_query = 
-              "SELECT * FROM booking_info
-              WHERE first_name = :first_name AND last_name = :last_name AND phone = :phone AND email = :email AND 
+              "select * from booking_info
+              where first_name = :first_name AND last_name = :last_name AND phone = :phone AND email = :email AND 
               room_type = :room_type AND check_in_date = :check_in_date AND check_in_time = :check_in_time AND check_out_date = :check_out_date AND check_out_time = :check_out_time;";
               //Call the prepare method of the PDO object
               $statement = $dbo->prepare($get_booking_info_query);
