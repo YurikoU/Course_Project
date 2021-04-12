@@ -30,10 +30,11 @@
       $booking_id = filter_input(INPUT_GET, 'id');
 
       //Connect to the database 
-      require('connect.php'); 
+      require_once('connect.php'); 
+      $conn = dbo();
       $updating_info_query = "select * from booking_info where booking_id = :booking_id";
       //Call the prepare method of the PDO object
-      $statement = $dbo->prepare($updating_info_query); 
+      $statement = $conn->prepare($updating_info_query); 
       //Bind the parameter
       $statement->bindParam(':booking_id', $booking_id); 
       //Execute the query

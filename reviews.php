@@ -55,8 +55,8 @@
         $_SESSION['name'] = $name;
 
         //connect to the database 
-        require('connect.php'); 
-
+        require_once('connect.php'); 
+        $conn = dbo();
 
         if(isset($search))
         {
@@ -78,7 +78,7 @@
                 //Plus another term a user want to search to the above original query
                 $sql .= " AND review LIKE :term";
                 //Call the prepare method of the PDO object
-                $statement = $dbo->prepare($sql);
+                $statement = $conn->prepare($sql);
                 //Bind parameter
                 $statement->bindValue(':term', '%'.$term.'%');
               }
@@ -91,7 +91,7 @@
               //Set up SQL statement 
               $search_reviews_query = "SELECT * FROM reviews WHERE review LIKE :search_terms";
               //Call the prepare method of the PDO object
-              $statement = $dbo->prepare($search_reviews_query);
+              $statement = $conn->prepare($search_reviews_query);
               //Bind parameter
               $statement->bindValue(':search_terms', '%'.$search_terms.'%');
             }
@@ -155,7 +155,7 @@
           //set up SQL statement 
           $view_reviews_query = "SELECT * FROM reviews"; 
           //prepare 
-          $statement = $dbo->prepare($view_reviews_query); 
+          $statement = $conn->prepare($view_reviews_query); 
           //execute 
           $statement->execute(); 
           //use fetchAll to store results 

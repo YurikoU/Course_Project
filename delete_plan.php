@@ -32,10 +32,11 @@
 
 
     //Connect to the database
-    require('connect.php'); 
+    require_once('connect.php'); 
+    $conn = dbo();
     $delete_plan_query = "delete from booking_info where booking_id = :booking_id;"; 
     //Call the prepare method of the PDO object
-    $statement = $dbo->prepare($delete_plan_query); 
+    $statement = $conn->prepare($delete_plan_query); 
     //Bind parameters
     $statement->bindParam(':booking_id', $booking_id); 
     //Execute the query

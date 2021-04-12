@@ -83,11 +83,12 @@
 
           try{
             //Connect to the database
-            require('connect.php');
+            require_once('connect.php');
+            $conn = dbo();
 
             $updating_sql = "update booking_info set phone = :phone, email = :email where booking_id = :booking_id";
             //Call the prepare method of the PDO object
-            $statement = $dbo->prepare($updating_sql);
+            $statement = $conn->prepare($updating_sql);
             //Bind parameters
             $statement->bindParam(':booking_id', $booking_id);
             $statement->bindParam(':phone', $phone);
@@ -162,7 +163,8 @@
 
           try {
             //Connect to the database
-            require('connect.php');
+            require_once('connect.php');
+            $conn = dbo();
 
             //Check the room availability
             $availability_query = 
@@ -172,7 +174,7 @@
                     OR (check_in_date < :check_out_date  AND  :check_out_date <= check_out_date)
                     OR (:check_in_date <= check_in_date  AND   check_out_date <= :check_out_date))
                     AND room_type = :room_type);";
-            $statement = $dbo->prepare($availability_query);
+            $statement = $conn->prepare($availability_query);
             $statement->bindParam(':room_type', $room_type);
             $statement->bindParam(':check_in_date', $check_in_date_string);
             $statement->bindParam(':check_out_date', $check_out_date_string);
@@ -195,7 +197,7 @@
               $booking_query = 
               "insert into booking_info (first_name, last_name, phone, email, room_type, check_in_date, check_in_time, check_out_date, check_out_time) values (:first_name, :last_name, :phone, :email, :room_type, :check_in_date, :check_in_time, :check_out_date, :check_out_time);";
               //Call the prepare method of the PDO object
-              $statement = $dbo->prepare($booking_query);
+              $statement = $conn->prepare($booking_query);
               //Bind parameters
               $statement->bindParam(':first_name', $first_name);
               $statement->bindParam(':last_name', $last_name);
@@ -216,7 +218,7 @@
               where first_name = :first_name AND last_name = :last_name AND phone = :phone AND email = :email AND 
               room_type = :room_type AND check_in_date = :check_in_date AND check_in_time = :check_in_time AND check_out_date = :check_out_date AND check_out_time = :check_out_time;";
               //Call the prepare method of the PDO object
-              $statement = $dbo->prepare($get_booking_info_query);
+              $statement = $conn->prepare($get_booking_info_query);
               //Bind parameters
               $statement->bindParam(':first_name', $first_name);
               $statement->bindParam(':last_name', $last_name);

@@ -1,7 +1,7 @@
 <?php
   session_start();
   if (isset($_SESSION['user'])) { // If a user's logged in
-    header("Location: profile.php"); // Jump to profile.php
+    header("Location: membership_top.php"); // Jump to profile.php
     exit();
   }
 
@@ -37,15 +37,15 @@
     
     <main class="form-signin" style="position: relative;">
       <form style="width:300px; margin:0 auto; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);" action="./login_process.php" method="post">
-        <h3 class="mb-3 fw-normal">Log In</h3>
+        <h3 class="mb-3 fw-normal">Membership Log-in</h3>
         <div class="form-floating">
-          <input class="form-control" type="email" id="email" placeholder="Email address" style="height:58px;">
+          <input name="email" class="form-control" type="email" id="email" placeholder="Email address" style="height:58px;">
         </div>
         <div class="form-floating">
-          <input class="form-control"  type="password" id="password" placeholder="Password" style="height:58px;">
+          <input name="password" class="form-control"  type="password" id="password" placeholder="Password" style="height:58px;">
         </div>
-        <button class="btn btn-primary" type="submit" style="width:100%;">Log in</button>
-        <a class="btn" href="signin.php">Create a new account?</a>
+        <button name="login" class="btn btn-primary" type="submit" style="width:100%;">Log in</button>
+        <a class="btn" href="signup.php">Create a new account?</a>
       </form>
     </main>
 
