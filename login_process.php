@@ -37,6 +37,6 @@ if (isset($_POST["login"])) {
 
   $_SESSION["user"] = $user;
   $_SESSION["successes"][] = "You have logged in successfully.";
-  header("Location: membership_top.php");
+  header("Location: member_top.php");
   exit();
 }  

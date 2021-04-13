@@ -1,7 +1,7 @@
 <?php
   session_start();
   if (isset($_SESSION['user'])) { // If a user's logged in
-    header("Location: membership_top.php"); // Jump to profile.php
+    header("Location: member_top.php"); // Jump to profile.php
     exit();
   }
 

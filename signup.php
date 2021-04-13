@@ -3,7 +3,7 @@
   // Before we render the form let's check for form values
   session_start();
   if (isset($_SESSION['user'])) {
-    header("Location: membership_top.php");
+    header("Location: member_top.php");
     exit();
   }
 
