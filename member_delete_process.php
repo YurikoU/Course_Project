@@ -18,6 +18,7 @@
     $stmt = $conn->prepare($sql);
     $stmt->bindParam(':member_id', $member_id, PDO::PARAM_STR);
     $stmt->execute();
+    unset($_SESSION['user']);
     header("Location: index.php");
     exit;
   } catch (Exception $error) {
