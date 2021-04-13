@@ -27,6 +27,8 @@
       </header>
 
       <main>
+      <div class="row justify-content-center">
+        <div class="col-4">
         <h3>Update Your Profile</h3>
           <form action="member_update_process.php" method="post">
             <div class="form-group">
@@ -52,6 +54,12 @@
               <a class="btn btn-danger btn-sm" href="member_delete_process.php" onclick='return confirmation()'><small>delete account</small></a>
             </div>
           </form>
+        </div>
+      <div class="col-4">
+          <img src="Images/profiles/profile1.jpg" width="300" height="300" alt="profile photo">
+      </div>
+      </div>
+
       </main>
       <script type="text/javascript">
         function confirmation() { 
@@ -59,6 +67,9 @@
           {
             location.href = "member_delete_process.php";
             return true;
+          } else {
+            location.href = "member_top.php";
+            return false;
           }
         }
       </script>

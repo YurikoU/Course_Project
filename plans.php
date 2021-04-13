@@ -26,7 +26,7 @@
 
       <div class="uk-child-width-1-2 uk-text-center" uk-grid>
         <div>
-          <div class="uk-card uk-card-default uk-card-body uk-transition-toggle" tabindex="0" style="background: url(Images/photo7.jpg);background-position:0% 50%; background-size:cover;" >
+          <div class="uk-card uk-card-default uk-card-body uk-transition-toggle" tabindex="0" style="background: url(Images/room7.jpg);background-position:0% 50%; background-size:cover;" >
           <!-- the source of the photo https://www.pexels.com/search/hotel/ -->
             <div class="uk-transition-fade">
               <h3>Room A, 1 Queen Bed</h3>
@@ -43,7 +43,7 @@
           </div>
         </div>
         <div>
-          <div class="uk-card uk-card-default uk-card-body  uk-transition-toggle" tabindex="0" style="background: url(Images/photo13.jpg);background-position:0% 50%; background-size:cover;" >
+          <div class="uk-card uk-card-default uk-card-body  uk-transition-toggle" tabindex="0" style="background: url(Images/room13.jpg);background-position:0% 50%; background-size:cover;" >
           <!-- the source of the photo https://www.pexels.com/search/hotel/ -->
             <div class="uk-transition-fade">
               <h3>Room B, 1 Queeen Bed</h3>
@@ -60,7 +60,7 @@
           </div>
         </div>
         <div>
-          <div class="uk-card uk-card-default uk-card-body uk-transition-toggle" tabindex="0" style="background: url(Images/photo14.jpg);background-position:0% 50%; background-size:cover;" >
+          <div class="uk-card uk-card-default uk-card-body uk-transition-toggle" tabindex="0" style="background: url(Images/room14.jpg);background-position:0% 50%; background-size:cover;" >
           <!-- the source of the photo https://www.pexels.com/search/hotel/ -->
             <div class="uk-transition-fade">
               <h3>Room C, 1 King Bed</h3>
@@ -77,7 +77,7 @@
           </div>
         </div>
         <div>
-          <div class="uk-card uk-card-default uk-card-body uk-transition-toggle" tabindex="0" style="background: url(Images/photo12.jpg);background-position:0% 50%; background-size:cover;" >
+          <div class="uk-card uk-card-default uk-card-body uk-transition-toggle" tabindex="0" style="background: url(Images/room12.jpg);background-position:0% 50%; background-size:cover;" >
           <!-- the source of the photo https://www.pexels.com/search/hotel/ -->
             <div class="uk-transition-fade">
               <h3>Room D, 1 King Bed</h3>
@@ -94,7 +94,7 @@
           </div>
         </div>
         <div>
-          <div class="uk-card uk-card-default uk-card-body uk-transition-toggle" tabindex="0" style="background: url(Images/photo10.jpg);background-position:0% 50%; background-size:cover;" >
+          <div class="uk-card uk-card-default uk-card-body uk-transition-toggle" tabindex="0" style="background: url(Images/room10.jpg);background-position:0% 50%; background-size:cover;" >
           <!-- the source of the photo https://www.pexels.com/search/hotel/ -->
             <div class="uk-transition-fade">
               <h3>Room E, 1 Super King Bed</h3>
@@ -111,7 +111,7 @@
           </div>
         </div>
         <div>
-          <div class="uk-card uk-card-default uk-card-body uk-transition-toggle" tabindex="0" style="background: url(Images/photo11.jpg);background-position:0% 50%; background-size:cover;" >
+          <div class="uk-card uk-card-default uk-card-body uk-transition-toggle" tabindex="0" style="background: url(Images/room11.jpg);background-position:0% 50%; background-size:cover;" >
           <!-- the source of the photo https://www.pexels.com/search/hotel/ -->
             <div class="uk-transition-fade">
               <h3>Room F, 1 Super King Bed</h3>

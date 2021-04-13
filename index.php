@@ -23,7 +23,7 @@
 
 
     <main>
-      <div class="uk-background-cover uk-height-medium uk-panel uk-flex uk-flex-center uk-flex-middle" style="background-image: url(Images/photo5.jpg); ">
+      <div class="uk-background-cover uk-height-medium uk-panel uk-flex uk-flex-center uk-flex-middle" style="background-image: url(Images/room5.jpg); ">
       <!-- The source of the photo https://www.pexels.com/search/hotel/ -->
         <h1 class="uk-h1">The Glory Hotel & Spa</h1>
         <h2 class="uk-h2">Stay hotel, feel home</h2>

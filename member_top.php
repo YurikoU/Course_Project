@@ -25,30 +25,37 @@
         </div>
       </header>
       <main>
-        <h3>Your Profile</h3>
-        <form action="booking_process.php" method="post">
-          <div class="form-group">
-            <label>Member ID<input type="text" name="member_id" class="form-control" value="<?= "{$user['member_id']}" ?>" readonly></label>
-          </div>
-          <div class="form-group">
-            <label>First Name<input type="text" name="first_name" class="form-control" value="<?= "{$user['first_name']}" ?>" readonly></label>
-          </div>
-          <div class="form-group">
-            <label>Last Name<input type="text" name="last_name" class="form-control" value="<?= "{$user['last_name']}" ?>" readonly></label>
-          </div>
-          <div class="form-group">
-            <label>Phone Number<input type="tel" name="phone" class="form-control"  value="<?= "{$user['phone']}" ?>" readonly></label>
-          </div>
-          <div class="form-group">
-            <label>E-Mail Address<input type="email" name="email" class="form-control" value="<?= "{$user['email']}" ?>" readonly></label>
-          </div>
-          <a class="btn btn-info" href="member_update.php">Update</a>
-          <a class="btn btn-outline-info" href="logout.php">Logout</a>
-          <p></p>
-          <div class="delete" style="display:flex; justify-content:flex-end;">
-            <a class="btn btn-danger btn-sm" href='member_delete_process.php' onclick='return confirmation()'><small>delete account</small></a>
-          </div>
-        </form>
+      <div class="row justify-content-center">
+        <div class="col-4">
+          <h3>Your Profile</h3>
+          <form action="booking_process.php" method="post">
+            <div class="form-group">
+              <label>Member ID<input type="text" name="member_id" class="form-control" value="<?= "{$user['member_id']}" ?>" readonly></label>
+            </div>
+            <div class="form-group">
+              <label>First Name<input type="text" name="first_name" class="form-control" value="<?= "{$user['first_name']}" ?>" readonly></label>
+            </div>
+            <div class="form-group">
+              <label>Last Name<input type="text" name="last_name" class="form-control" value="<?= "{$user['last_name']}" ?>" readonly></label>
+            </div>
+            <div class="form-group">
+              <label>Phone Number<input type="tel" name="phone" class="form-control"  value="<?= "{$user['phone']}" ?>" readonly></label>
+            </div>
+            <div class="form-group">
+              <label>E-Mail Address<input type="email" name="email" class="form-control" value="<?= "{$user['email']}" ?>" readonly></label>
+            </div>
+            <a class="btn btn-info" href="member_update.php">Update</a>
+            <a class="btn btn-outline-info" href="logout.php">Logout</a>
+            <p></p>
+            <div class="delete" style="display:flex; justify-content:flex-end;">
+              <a class="btn btn-danger btn-sm" href='member_delete_process.php' onclick='return confirmation()'><small>delete account</small></a>
+            </div>
+          </form>
+        </div>
+        <div class="col-4">
+          <img src="Images/profiles/profile1.jpg" width="300" height="300" alt="profile photo">
+        </div>
+      </div>
       </main>
 
       <script type="text/javascript">
@@ -57,6 +64,9 @@
           {
             location.href = "member_delete_process.php";
             return true;
+          } else {
+            location.href = "member_top.php";
+            return false;
           }
         }
       </script>
