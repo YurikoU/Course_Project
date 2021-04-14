@@ -148,7 +148,7 @@
               </div>
               <div class="row">
                 <div class="col-sm-3 form-group">
-                  <label class="form-label">e-Mail Address<input class="form-control" type="email" name="email" placeholder="E.g. example@gloryhotel.ca"></label>
+                  <label class="form-label">E-mail Address<input class="form-control" type="email" name="email" placeholder="E.g. example@gloryhotel.ca"></label>
                 </div>
                 <div class="col-sm-3 form-group">
                   <label class="form-label" for="room_type">Room Type</label>

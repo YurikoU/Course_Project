@@ -44,7 +44,7 @@
                 <label>Phone Number<input type="tel" name="phone" class="form-control"  value="<?= "{$user['phone']}" ?>" required></label>
               </div>
               <div class="form-group">
-                <label>E-Mail Address<input type="email" name="email" class="form-control" value="<?= "{$user['email']}" ?>" required></label>
+                <label>E-mail Address<input type="email" name="email" class="form-control" value="<?= "{$user['email']}" ?>" required></label>
               </div>
               <button name="update" class="btn btn-info" type="submit">Update Change</button>
               <a class="btn btn-outline-info" href="member_top.php">Cancel</a>
@@ -53,8 +53,8 @@
             </div>
             <div class="col-4">
             <p></p>
-              <label>Profile Photo<input type="file" name="profile_photo" class="form-control"></label>
-              <img src="Images/profiles/profile1.jpg" width="300" height="300" alt="profile photo">
+              <label>Profile Photo<input type="file" name="photo" class="form-control"></label>
+              <img src="image.php" width="300" height="300" alt="profile photo">
             </div>
           </div>
         </form>

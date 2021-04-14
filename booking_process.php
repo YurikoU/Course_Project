@@ -106,7 +106,7 @@
                   <tr><td>First Name: $first_name</td></tr>
                   <tr><td>Last Name: $last_name</td></tr>
                   <tr><td>Phone Number: $phone</td></tr>
-                  <tr><td>e-Mail Address: $email</td></tr></tbody></table>";
+                  <tr><td>E-mail Address: $email</td></tr></tbody></table>";
             echo "<a href='index.php'>Back to TOP page</a><p></p>";   
             echo "<a href='plans.php'>Book another plan</a><p></p>";  
             echo "<a href='delete_plan.php?id=$booking_id' onclick='return confirmation()'>Delete this reservation</a>";  
@@ -246,7 +246,7 @@
                       <tr><td>First Name: " . $booking_info['first_name'] . "</td></tr>
                       <tr><td>Last Name: " . $booking_info['last_name'] . "</td></tr>
                       <tr><td>Phone Number: " . $booking_info['phone'] . "</td></tr>
-                      <tr><td>e-Mail Address: " . $booking_info['email'] . "</td></tr>
+                      <tr><td>E-mail Address: " . $booking_info['email'] . "</td></tr>
                       <tr><td>Room Type: " . $booking_info['room_type'] . "</td></tr>
                       <tr><td>Check-in Date: " . $booking_info['check_in_date'] . "</td></tr>
                       <tr><td>Check-in Time: " . $booking_info['check_in_time'] . "</td></tr>

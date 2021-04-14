@@ -66,7 +66,7 @@
         <label>Phone Number<input type="tel" name="phone" placeholder="E.g. 604-1234-5678" class="form-control"  value="<?php echo $phone; ?>" required></label>
       </div>
       <div class="form-group">
-        <label>e-Mail Address<input type="email" name="email" placeholder="E.g. example@gloryhotel.ca" class="form-control" value="<?php echo $email; ?>"></label>
+        <label>E-mail Address<input type="email" name="email" placeholder="E.g. example@gloryhotel.ca" class="form-control" value="<?php echo $email; ?>"></label>
       </div>
       <button  class="uk-button" name="submit">Update information</button>
     </form>

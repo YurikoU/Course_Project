@@ -42,7 +42,7 @@
                 <label>Phone Number<input type="tel" name="phone" class="form-control"  value="<?= "{$user['phone']}" ?>" readonly></label>
               </div>
               <div class="form-group">
-                <label>E-Mail Address<input type="email" name="email" class="form-control" value="<?= "{$user['email']}" ?>" readonly></label>
+                <label>E-mail Address<input type="email" name="email" class="form-control" value="<?= "{$user['email']}" ?>" readonly></label>
               </div>
               <a class="btn btn-info" href="member_update.php">Update</a>
               <a class="btn btn-outline-info" href="logout.php">Logout</a>
@@ -50,7 +50,7 @@
             <div class="col-4">
               <p></p>
               <label>Profile Photo</label>
-              <img src="Images/profiles/profile1.jpg" width="300" height="300" alt="profile photo">
+              <img src="image.php" width="300" height="300" alt="profile photo">
             </div>
           </div>
         </form>
