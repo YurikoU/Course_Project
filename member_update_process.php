@@ -15,21 +15,41 @@
 
     try {
       
+      $errors = [];
+
       //Update from the old info to the new info
       $member_id = filter_input(INPUT_POST, 'member_id', FILTER_SANITIZE_NUMBER_INT);
       $phone = filter_input(INPUT_POST, 'phone', FILTER_SANITIZE_NUMBER_INT);
       $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
+      $email = strtolower($email);
+      $city = filter_input(INPUT_POST, 'city');
+      $sns = filter_input(INPUT_POST, 'sns', FILTER_VALIDATE_URL);
+      $skills = filter_input(INPUT_POST, 'skills');
       //Store the image data as text
       $photo = file_get_contents($_FILES['photo']['tmp_name']);
 
+      
+      // Validate the email is in the correct format
+      if (!$email) {
+        echo $errors[] = "The email isn't in a valid format.";
+      }
+      if (!$sns) {
+        echo $errors[] = "The URL isn't in a valid format.";
+      }
+
+
+
       require_once('connect.php');
       $conn = dbo();
-      $sql = "UPDATE membership SET phone = :phone, email = :email, photo = :photo WHERE member_id = :member_id;";
+      $sql = "UPDATE membership SET phone=:phone, email=:email, city=:city, sns=:sns, skills=:skills WHERE member_id = :member_id;";
       $stmt = $conn->prepare($sql);
       $stmt->bindParam(':member_id', $member_id, PDO::PARAM_STR);
       $stmt->bindParam(':phone', $phone, PDO::PARAM_STR);
       $stmt->bindParam(':email', $email, PDO::PARAM_STR);
       $stmt->bindParam(':photo', $photo);
+      $stmt->bindParam(':city', $city);
+      $stmt->bindParam(':sns', $sns);
+      $stmt->bindParam(':skills', $skills);
       $stmt->execute();
 
 
@@ -51,6 +71,7 @@
       exit;
     } catch (Exception $error) {
       $errors[] = $error->getMessage();
+      error_handler($errors);
     }
   }
 

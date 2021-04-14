@@ -90,10 +90,7 @@
 
     // NORMALIZATION -------------------------------------------------------------------
     // Normalize the string fields (convert to lowercase and capitalize the first letter)
-
-    // Lowercase the email
     $email = strtolower($email);
-
     // Hash the password
     $password = password_hash($password, PASSWORD_DEFAULT);
     // END OF NORMALIZATION ----------------------------------------------------------------

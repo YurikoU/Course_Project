@@ -44,6 +44,20 @@
               <div class="form-group">
                 <label>E-mail Address<input type="email" name="email" class="form-control" value="<?= "{$user['email']}" ?>" readonly></label>
               </div>
+
+
+              <div class="form-group">
+                <label>City<input type="text" name="city" class="form-control" value="<?= "{$user['city']}" ?>" readonly></label>
+              </div>
+              <div class="form-group">
+                <label>SNS (URL)<input type="url" name="sns" class="form-control" value="<?= "{$user['sns']}" ?>" readonly></label>
+              </div>
+              <div class="form-group">
+                <label>Skills<input type="text" name="skills" class="form-control" value="<?= "{$user['skills']}" ?>" readonly></label>
+              </div>
+
+
+
               <a class="btn btn-info" href="member_update.php">Update</a>
               <a class="btn btn-outline-info" href="logout.php">Logout</a>
             </div>

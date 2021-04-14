@@ -21,7 +21,8 @@
         foreach($messages as $message) {
           echo "{$message}<br>";
         }
-      echo "</div>";
+
+        echo "</div>";
     }
   }
 

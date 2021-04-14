@@ -22,6 +22,7 @@
   </head>
 
   <body class="reviews">
+  <?PHP include_once('notification.php'); ?>
 
     <header>
         <nav class="menu_bar">
@@ -40,7 +41,6 @@
     </header>
 
     <main>
-    
     <div class="container">
       <div class="py-5 text-center">
         <h2 class="display-4">Membership Registeration</h2>
@@ -61,25 +61,25 @@
 
           <div  class="row">
             <div class="col-sm-4 form-group">
-              <label for="phone" class="form-label">Phone:</label>
+              <label for="phone" class="form-label">Phone: <small style="color:red; font-weight:bold;">*</small></label>
               <input id="phone" class="form-control" type="phone" name="phone" placeholder="604-1234-5678" required value="<?= $form_values['phone'] ?? null ?>">
             </div>
             <div class="col-sm-4 form-group">
-              <label for="email" class="form-label">Email:</label>
+              <label for="email" class="form-label">Email: <small style="color:red; font-weight:bold;">*</small></label>
               <input id="email" class="form-control" type="email" name="email" placeholder="example@gloryhotel.ca" required value="<?= $form_values['email'] ?? null ?>">
             </div>
             <div class="col-sm-4 form-group">
-                <label for="email_confirmation" class="form-label">Email Confirmation:</label>
-                <input id="email_confirmation" class="form-control" type="email" name="email_confirmation" placeholder="example@gloryhotel.ca" required value="<?= $form_values['email_confirmation'] ?? null ?>">
+              <label for="email_confirmation" class="form-label">Email Confirmation:  <small style="color:red; font-weight:bold;">*</small></label>
+              <input id="email_confirmation" class="form-control" type="email" name="email_confirmation" placeholder="example@gloryhotel.ca" required value="<?= $form_values['email_confirmation'] ?? null ?>">
             </div>
 
             <div  class="row">
               <div class="col-sm-6 form-group">
-                <label for="password" class="form-label">Password:</label>
+                <label for="password" class="form-label">Password: <small style="color:red; font-weight:bold;">*</small></label>
                 <input id="password" class="form-control" type="password" name="password" required>
               </div>
               <div class="col-sm-6 form-group">
-                <label for="password_confirmation" class="form-label">Password Confirmation:</label>
+                <label for="password_confirmation" class="form-label">Password Confirmation: <small style="color:red; font-weight:bold;">*</small></label>
                 <input id="password_confirmation" class="form-control" type="password" name="password_confirmation" required>
               </div>
             </div>

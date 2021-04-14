@@ -41,11 +41,21 @@
                 <label>Last Name<input type="text" name="last_name" class="form-control" value="<?= "{$user['last_name']}" ?>" readonly></label>
               </div>
               <div class="form-group">
-                <label>Phone Number<input type="tel" name="phone" class="form-control"  value="<?= "{$user['phone']}" ?>" required></label>
+                <label>Phone Number <small style="color:red; font-weight:bold;">*</small><input type="tel" name="phone" class="form-control"  value="<?= "{$user['phone']}" ?>" required></label>
               </div>
               <div class="form-group">
-                <label>E-mail Address<input type="email" name="email" class="form-control" value="<?= "{$user['email']}" ?>" required></label>
+                <label>E-mail Address <small style="color:red; font-weight:bold;">*</small><input type="email" name="email" class="form-control" value="<?= "{$user['email']}" ?>" required></label>
               </div>
+              <div class="form-group">
+                <label>City<input type="text" name="city" class="form-control" value="<?= "{$user['city']}" ?>" ></label>
+              </div>
+              <div class="form-group">
+                <label>SNS (URL)<input type="url" name="sns" class="form-control" value="<?= "{$user['sns']}" ?>"></label>
+              </div>
+              <div class="form-group">
+                <label>Skills<input type="text" name="skills" class="form-control" value="<?= "{$user['skills']}" ?>"></label>
+              </div>
+
               <button name="update" class="btn btn-info" type="submit">Update Change</button>
               <a class="btn btn-outline-info" href="member_top.php">Cancel</a>
               <a class="btn btn-outline-info" href="logout.php">Logout</a>
