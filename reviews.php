@@ -16,27 +16,26 @@
           <a href="plans.php" class="uk-h5">PLANS</a>
           <a href="reviews.php" class="current_page uk-h5">CUSTOMER REVIWS</a>
           <a href="access.php" class="uk-h5">ACCESS</a>
-          <a href="membership_top.php" class="uk-h5">LOGIN YOUR PAGE</a>
-          <a href="membership_top.php" class="uk-h5">SIGN UP</a>
+          <a href="login.php" class="uk-h5">LOGIN YOUR PAGE</a>
         </div>
       </nav>
     </header>
 
     <main>
       <h2>Customer Reviews</h2>
-        <form action="reviews.php" method="get"> 
-          <div class="row">
-            <div class="col">
-              <label>Your name <i>(optional)</i><input type="text" name="name" placeholder="Please enter your name"></label>
-            </div>
-            <div class="col">
-              <label>Search reviews by the term<input type="text" name="search_terms" placeholder="Please enter any word"></label>
-            </div>
-            <button  class="uk-button" name="search">Search</button>
-            <button  class="uk-button" name="reset">Reset</button>
-          </div>
-        </form>
 
+      <form action="reviews.php" method="get"> 
+        <div class="row">
+          <div class="col">
+            <label>Your name <i>(optional)</i><input type="text" name="name" placeholder="Please enter your name"></label>
+          </div>
+          <div class="col">
+            <label>Search reviews by the term<input type="text" name="search_terms" placeholder="Please enter any word"></label>
+          </div>
+          <button  class="uk-button" name="search">Search</button>
+          <button  class="uk-button" name="reset">Reset</button>
+        </div>
+      </form>
 
       <?PHP
         session_start(); 
@@ -56,8 +55,8 @@
         $_SESSION['name'] = $name;
 
         //connect to the database 
-        require('connect.php'); 
-
+        require_once('connect.php'); 
+        $conn = dbo();
 
         if(isset($search))
         {
@@ -79,7 +78,7 @@
                 //Plus another term a user want to search to the above original query
                 $sql .= " AND review LIKE :term";
                 //Call the prepare method of the PDO object
-                $statement = $dbo->prepare($sql);
+                $statement = $conn->prepare($sql);
                 //Bind parameter
                 $statement->bindValue(':term', '%'.$term.'%');
               }
@@ -92,7 +91,7 @@
               //Set up SQL statement 
               $search_reviews_query = "SELECT * FROM reviews WHERE review LIKE :search_terms";
               //Call the prepare method of the PDO object
-              $statement = $dbo->prepare($search_reviews_query);
+              $statement = $conn->prepare($search_reviews_query);
               //Bind parameter
               $statement->bindValue(':search_terms', '%'.$search_terms.'%');
             }
@@ -156,7 +155,7 @@
           //set up SQL statement 
           $view_reviews_query = "SELECT * FROM reviews"; 
           //prepare 
-          $statement = $dbo->prepare($view_reviews_query); 
+          $statement = $conn->prepare($view_reviews_query); 
           //execute 
           $statement->execute(); 
           //use fetchAll to store results 
@@ -179,7 +178,6 @@
           //Close the DB connection 
           $statement->closeCursor(); 
         }
-
       ?>
 
     </main>

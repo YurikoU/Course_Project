@@ -13,3 +13,4 @@
   <link rel="stylesheet" href="CSS/style.css" /> <!--custom styles-->
   <link rel="shortcut icon" href="Images/favicon.png" type="image/png" />
   <!-- The source of the favicon  https://www.flaticon.com/free-icon/menu_1828859 -->
+  <script src='https://www.google.com/recaptcha/api.js' async defer ></script>

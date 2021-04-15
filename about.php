@@ -16,8 +16,7 @@
           <a href="plans.php" class="uk-h5">PLANS</a>
           <a href="reviews.php" class="uk-h5">CUSTOMER REVIWS</a>
           <a href="access.php" class="uk-h5">ACCESS</a>
-          <a href="membership_top.php" class="uk-h5">LOGIN YOUR PAGE</a>
-          <a href="membership_top.php" class="uk-h5">SIGN UP</a>
+          <a href="login.php" class="uk-h5">LOGIN YOUR PAGE</a>
         </div>
       </nav>
     </header>
@@ -25,7 +24,7 @@
 
     <main>
       <article class="uk-panel">
-        <img class="uk-align-left uk-margin-remove-adjacent" src="Images/photo1.jpg" width="500" height="750" alt="photo of the lobby">
+        <img class="uk-align-left uk-margin-remove-adjacent" src="Images/room1.jpg" width="500" height="750" alt="photo of the lobby">
         <!-- The source of the photo https://www.pexels.com/search/hotel/ -->
         <h2 class="uk-h2"> A World that You Feel Relaxed </h2>
         <p class="uk-h5">When you need a break, what are you looking for? Is it a deep freshness? Or, is it a perfect experience in the essence of that place-sophisticated, one and only? Visiting the Glory Hotel & Spa is chilling out at your comfort home, allowing you to discover pleasures you genuinely want.</p>

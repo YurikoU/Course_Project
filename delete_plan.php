@@ -16,8 +16,7 @@
           <a href="plans.php" class="current_page uk-h5">PLANS</a>
           <a href="reviews.php" class="uk-h5">CUSTOMER REVIWS</a>
           <a href="access.php" class="uk-h5">ACCESS</a>
-          <a href="membership_top.php" class="uk-h5">LOGIN YOUR PAGE</a>
-          <a href="membership_top.php" class="uk-h5">SIGN UP</a>
+          <a href="login.php" class="uk-h5">LOGIN YOUR PAGE</a>
         </div>
       </nav>
   </header>
@@ -33,10 +32,11 @@
 
 
     //Connect to the database
-    require('connect.php'); 
-    $delete_plan_query = "DELETE FROM booking_info WHERE booking_id = :booking_id;"; 
+    require_once('connect.php'); 
+    $conn = dbo();
+    $delete_plan_query = "delete from booking_info where booking_id = :booking_id;"; 
     //Call the prepare method of the PDO object
-    $statement = $dbo->prepare($delete_plan_query); 
+    $statement = $conn->prepare($delete_plan_query); 
     //Bind parameters
     $statement->bindParam(':booking_id', $booking_id); 
     //Execute the query
@@ -49,6 +49,7 @@
     //Error will be displayed once the server failed to update the data
     echo "<p>Failed to delete this reservation.</p>";
     echo $e -> getMessage();
+    exit();
   }
 
   ob_flush(); 

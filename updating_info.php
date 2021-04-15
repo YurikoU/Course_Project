@@ -16,8 +16,7 @@
           <a href="plans.php" class="current_page uk-h5">PLANS</a>
           <a href="reviews.php" class="uk-h5">CUSTOMER REVIWS</a>
           <a href="access.php" class="uk-h5">ACCESS</a>
-          <a href="membership_top.php" class="uk-h5">LOGIN YOUR PAGE</a>
-          <a href="membership_top.php" class="uk-h5">SIGN UP</a>
+          <a href="login.php" class="uk-h5">LOGIN YOUR PAGE</a>
         </div>
       </nav>
   </header>
@@ -31,10 +30,11 @@
       $booking_id = filter_input(INPUT_GET, 'id');
 
       //Connect to the database 
-      require('connect.php'); 
-      $updating_info_query = "SELECT * FROM booking_info WHERE booking_id = :booking_id";
+      require_once('connect.php'); 
+      $conn = dbo();
+      $updating_info_query = "select * from booking_info where booking_id = :booking_id";
       //Call the prepare method of the PDO object
-      $statement = $dbo->prepare($updating_info_query); 
+      $statement = $conn->prepare($updating_info_query); 
       //Bind the parameter
       $statement->bindParam(':booking_id', $booking_id); 
       //Execute the query
@@ -66,7 +66,7 @@
         <label>Phone Number<input type="tel" name="phone" placeholder="E.g. 604-1234-5678" class="form-control"  value="<?php echo $phone; ?>" required></label>
       </div>
       <div class="form-group">
-        <label>e-Mail Address<input type="email" name="email" placeholder="E.g. example@gloryhotel.ca" class="form-control" value="<?php echo $email; ?>"></label>
+        <label>E-mail Address<input type="email" name="email" placeholder="E.g. example@gloryhotel.ca" class="form-control" value="<?php echo $email; ?>"></label>
       </div>
       <button  class="uk-button" name="submit">Update information</button>
     </form>
