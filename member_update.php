@@ -60,7 +60,7 @@
 
               <button name="update" class="btn btn-info" type="submit">Update Change</button>
               <a class="btn btn-outline-info" href="member_top.php">Cancel</a>
-              <a class="btn btn-outline-info" href="logout.php">Logout</a>
+              <a class="btn btn-outline-secondary" href="logout.php">Logout</a>
               <p></p>
             </div>
             <div class="col-4">
@@ -70,7 +70,7 @@
             </div>
           </div>
         </form>
-        <div class="delete" style="display:flex; justify-content:flex-end;">
+        <div class="delete" style="display:flex; justify-content:flex-end; margin-top:160px;">
           <a class="btn btn-danger btn-sm" href="member_delete_process.php" onclick='return confirmation()'><small>delete account</small></a>
         </div>
       </main>
