@@ -25,7 +25,9 @@
         </div>
       </header>
       <main>
-        <h3>Your Profile</h3>
+        <div style="display:flex; justify-content:center;">
+          <h3>Update Your Profile</h3>
+        </div>
         <form>
           <div class="row justify-content-center">
             <div class="col-4">
@@ -45,7 +47,6 @@
                 <label>E-mail Address<input type="email" name="email" class="form-control" value="<?= "{$user['email']}" ?>" readonly></label>
               </div>
 
-
               <div class="form-group">
                 <label>City<input type="text" name="city" class="form-control" value="<?= "{$user['city']}" ?>" readonly></label>
               </div>
@@ -55,8 +56,6 @@
               <div class="form-group">
                 <label>Skills<input type="text" name="skills" class="form-control" value="<?= "{$user['skills']}" ?>" readonly></label>
               </div>
-
-
 
               <a class="btn btn-info" href="member_update.php">Update</a>
               <a class="btn btn-outline-info" href="logout.php">Logout</a>

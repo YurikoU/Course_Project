@@ -27,7 +27,9 @@
       </header>
 
       <main>
-        <h3>Update Your Profile</h3>
+        <div style="display:flex; justify-content:center;">
+          <h3>Update Your Profile</h3>
+        </div>
         <form action="member_update_process.php" method="post" enctype="multipart/form-data">
           <div class="row justify-content-center">
             <div class="col-4">
